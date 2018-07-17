@@ -1,0 +1,33 @@
+
+{% extends 'layout.html'%}
+
+{% block content%}
+<body>
+  <div class="container">
+    <table class="table">
+        <thead>
+      <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Time created</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for blog in blogs %}
+
+        <tr>
+
+          <td>{{blog.id}}</td>
+          <td><a href="/view/{{blog.id}}">{{blog.title}}</a> </td>
+          <td>{{blog.created_at}}</td>
+
+        </tr>
+
+        {% endfor %}
+
+      </tbody>
+
+      </table>
+      <a href="{{url_for('new_blog')}}"><button  class="btn btn-primary">New Blog Post</button></a>
+</div>
+{% endblock %}

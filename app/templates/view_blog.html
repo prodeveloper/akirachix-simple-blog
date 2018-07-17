@@ -1,0 +1,13 @@
+
+{% extends 'layout.html'%}
+
+{% block content%}
+<body>
+  <div class="container">
+  <p><b>{{blog.title}}</b></p>
+  <p>{{blog.body}}</p>
+  <p><i>Creation date {{blog.created_at}}</i></p>
+  <a href="{{url_for('index')}}"><button  class="btn btn-primary">All Blogs</button></a>
+</div>
+</body>
+{% endblock %}
